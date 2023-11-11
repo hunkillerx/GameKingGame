@@ -1,0 +1,22 @@
+server: 8080
+  
+spring:
+  application:
+    name: GameKingLife
+    jpa:
+      hibernate:
+        ddl-auto: update
+        unicode: true
+      open-in-view: true
+    datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 10000
+      timezone: UTC
+      charset: UTF-8
+      name: kinggame_mysql
+      endpoint: localhost:${datasource.port:3399}
+      username: kingGameUser
+      password: kingGamePass
+      url: jdbc:mysql://${datasource.endpoint}:${datasource.name}?useUnicode=true&characterEncoding=UTF-8
